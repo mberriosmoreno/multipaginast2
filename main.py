@@ -65,13 +65,13 @@ pages = {
 # Contenedor para los botones
 with st.sidebar:
     for title, page_func in pages.items():
-        if st.button(title, width=200):
+        if st.button(title, use_container_width=True):
             st.session_state.page = page_func
         st.markdown("---")  # Línea divisoria para mejorar el diseño
 
 # --- ELEMENTOS COMPARTIDOS EN TODAS LAS PÁGINAS ---
 try:
-    st.image("assets/logo.png", width=200)  # Logo compartido
+    st.image("assets/logo.png", use_column_width=True)  # Logo compartido
 except Exception:
     st.warning("No se pudo cargar el logo. Asegúrate de que el archivo 'logo.png' esté en la carpeta 'assets/'.")
 
