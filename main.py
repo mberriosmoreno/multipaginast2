@@ -1,5 +1,26 @@
 import streamlit as st
 
+# --- AJUSTES DE ESTILO PARA REDUCIR ESPACIOS ---
+st.markdown("""
+<style>
+/* Reducir el espacio entre el menú y el contenido */
+div[data-testid="stSidebar"] {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+}
+/* Reducir el margen superior del contenido principal */
+div[data-testid="stAppViewContainer"] {
+    padding-top: 1rem;
+}
+/* Estilo compacto para los botones del menú */
+button[kind="secondary"] {
+    margin: 0.2rem 0;
+    padding: 0.5rem;
+    width: 100%;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # --- CONFIGURACIÓN DE PÁGINAS ---
 def about_me():
     st.title("🏠 Acerca de Mí")
@@ -50,7 +71,7 @@ with st.sidebar:
 
 # --- ELEMENTOS COMPARTIDOS EN TODAS LAS PÁGINAS ---
 try:
-    st.image("assets/logo.png", width=200)  # Logo compartido
+    st.image("assets/logo.png", use_column_width=True)  # Logo compartido
 except Exception:
     st.warning("No se pudo cargar el logo. Asegúrate de que el archivo 'logo.png' esté en la carpeta 'assets/'.")
 
