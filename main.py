@@ -50,7 +50,7 @@ with st.sidebar:
 
 # --- ELEMENTOS COMPARTIDOS EN TODAS LAS PÁGINAS ---
 try:
-    st.image("assets/logo.png", use_column_width=True)  # Logo compartido
+    st.image("assets/logo.png", width=200)  # Logo compartido
 except Exception:
     st.warning("No se pudo cargar el logo. Asegúrate de que el archivo 'logo.png' esté en la carpeta 'assets/'.")
 
