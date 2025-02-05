@@ -65,7 +65,7 @@ pages = {
 # Contenedor para los botones
 with st.sidebar:
     for title, page_func in pages.items():
-        if st.button(title, use_container_width=True):
+        if st.button(title, width=200):
             st.session_state.page = page_func
         st.markdown("---")  # Línea divisoria para mejorar el diseño
 
