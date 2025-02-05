@@ -10,7 +10,7 @@ div[data-testid="stSidebar"] {
 }
 /* Reducir el margen superior del contenido principal */
 div[data-testid="stAppViewContainer"] {
-    padding-top: 1rem;
+    padding-top: 0rem;
 }
 /* Estilo compacto para los botones del menú */
 button[kind="secondary"] {
@@ -81,5 +81,6 @@ st.sidebar.markdown("Hecho con ❤️ por [Tu Nombre](https://tupagina.com)")
 if "page" not in st.session_state:
     st.session_state.page = about_me  # Página predeterminada
 
-# Renderizar la página seleccionada
-st.session_state.page()
+# Contenedor principal para el contenido
+with st.container():
+    st.session_state.page()
